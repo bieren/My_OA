@@ -21,27 +21,46 @@
 	 * 其中前两个验证都通过, 再验证 ③. 
 	 */
 
-	$(function() {
+	/* $(function() {
 		$(".submit").click(function() {
+			
+			var flag=true;
 			$("input:not(.submit)").each(function() {
 				var val=this.value;
 				//1、去除空格
+				
 				val=$.trim(val);
 				this.value=val;
+				
 				//////////////////////
 				
-				
-				
-				
+				//除去前后空格不能为空
+				var label=$(this).prev("b").text();//$(this).prev("b")找到每个段落紧邻的前一个同辈元素中标签名为b的元素。
+
+
+				if(val==""){
+					alert(label+"不能为空");
+					flag=false;
+				}else {
+					if(val.length<6){
+					alert(label+"不能少于6个字符");
+					flag=false;
+					}
+				}
 			});
+			if(flag){
+				var reg=/^[a-zA-Z]\w+\w$/g;
+				var loginName=$("input[name='loginName']").val();
+				loginName=$.trim(loginName);
+				if(!reg.test(loginName)){
+					alert("输入的用户名不合法:用户名只能以字母开头, 后边可以包含数字和_");
+				}
+			}
 			//取消默认行为
 			return false;
 		});
 	}) 
-	
-	
-	
-	
+	 */
 </script>
 </head>
 <body>
@@ -52,12 +71,20 @@
 		<s:form action="/emp-login" method="post">
 			<div class="login_div" align="center">
 
-				<font color="red"> </font> <b>用户名</b>
-				<s:textfield name="loginName"/>
-				<font color="red"> </font> <b>密码</b>
-				<s:password name="password"/>
-				<font color="red"> </font> <input type="submit" class="submit"
-					value="登录" />
+				<font color="red"></font> 
+				
+				<b>用户名</b>
+				<s:textfield name="loginName" />
+				<font color="red"> 
+					<s:fielderror fieldName="loginName" />
+				</font> 
+				
+				<b>密码</b>
+				<s:password name="password" />
+				<font color="red"> 
+				<s:fielderror fieldName="password" />
+				</font> 
+				<input type="submit" class="submit" value="登录" />
 			</div>
 		</s:form>
 	</div>
