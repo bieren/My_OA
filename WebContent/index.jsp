@@ -71,7 +71,10 @@
 		<s:form action="/emp-login" method="post">
 			<div class="login_div" align="center">
 
-				<font color="red"></font> 
+				<font color="red">
+				<s:text name="%{exception.class.name}"></s:text>
+				
+				</font> 
 				
 				<b>用户名</b>
 				<s:textfield name="loginName" />

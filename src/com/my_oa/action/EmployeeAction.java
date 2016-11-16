@@ -4,10 +4,12 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.my_oa.entities.Employee;
+import com.my_oa.service.EmployeeService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Preparable;
@@ -17,18 +19,30 @@ import com.opensymphony.xwork2.Preparable;
 public class EmployeeAction extends ActionSupport
 		implements RequestAware, SessionAware, ModelDriven<Employee>, Preparable {
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
+	@Autowired
+	private EmployeeService employeeService;
+	
+	
+	
 	public void prepareLogin() {
 
 		model=new Employee();
 	}
 
 	public String login() {
-		System.out.println("EmployeeAction#login");
+		//System.out.println("EmployeeAction#login");
+		
+		String loginName = model.getLoginName();
+		
+		String password = model.getPassword();
+		
+		Employee employee = employeeService.login(loginName, password);
+		
+		this.sessionMap.put("employee", employee);
+		
 		return SUCCESS;
 	}
 
