@@ -27,7 +27,7 @@
 
 
 			<result name="input">/index.jsp</result>
-			<result name="success">/success.jsp</result>
+			<result name="success">/WEB-INF/pages/success.jsp</result>
 
 		</action>
 	</package>
