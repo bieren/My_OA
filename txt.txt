@@ -1,0 +1,10 @@
+Address.hbm.xml
+Authority.hbm.xml
+City.hbm.xml
+Department.hbm.xml
+Employee.hbm.xml
+Province.hbm.xml
+Resource.hbm.xml
+Resume.hbm.xml
+Role.hbm.xml
+School.hbm.xml
