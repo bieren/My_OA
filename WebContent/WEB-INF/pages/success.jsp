@@ -9,19 +9,21 @@
 </head>
 
 
-	<frameset rows="50,*,20" cols="*" frameborder="no" border="0" framespacing="0" id="frame1">
+
+<frameset rows="50,*,20" cols="*" frameborder="no" border="0" framespacing="0" id="frame1">
 	    
-	    <frame name="banner" id="banner" scrolling="no" noresize="noresize" src="${ctp }common/topbar.jsp" frameborder="0">
+	    <frame name="banner" id="banner" scrolling="no" noresize="noresize" src="${ctp}common/topbar.jsp" frameborder="0">
 	    
 	    <frameset rows="*"  cols="200,10,*" frameborder="no" border="0" framespacing="0" id="frame2">
-	       <frame name="lef" id="left" scrolling="no" noresize="noresize" src="${ctp }common/navigation.jsp" frameborder="0">
-	       <frame name="menu" id="menu" scrolling="no" noresize="noresize" src="${ctp }common/menu.jsp" frameborder="0">
-	       <frame name="content" id="content" scrolling="no" frameborder="0" src="${ctp }common/content.jsp">
+	       <frame name="lef" id="left" scrolling="no" noresize="noresize" src="${ctp}common/navigation.jsp" frameborder="0">
+	       <frame name="menu" id="menu" scrolling="no" noresize="noresize" src="${ctp}common/menu.jsp" frameborder="0">
+	       <frame name="content" id="content" scrolling="no" frameborder="0" src="${ctp}common/content.jsp">
 	    </frameset>
 	    
-	    <frame name="status_bar" id="status_bar" scrolling="no" noresize="noresize" src="${ctp }common/status_bar.jsp" frameborder="0">
+	    <frame name="status_bar" id="status_bar" scrolling="no" noresize="noresize" src="${ctp}common/status_bar.jsp" frameborder="0">
 		
 	</frameset>
+
 
 
 </html>

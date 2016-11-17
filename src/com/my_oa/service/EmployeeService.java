@@ -9,12 +9,23 @@ import com.my_oa.entities.Employee;
 import com.my_oa.exception.AccountUnabledException;
 import com.my_oa.exception.LoginNotFoundException;
 import com.my_oa.exception.PasswordNotMatchException;
+import com.my_oa.orm.Page;
 
 @Service
 public class EmployeeService {
 
 	@Autowired
 	private EmployeeDao employeeDao;
+	
+	
+	
+	
+	@Transactional(readOnly=true)
+	public Page<Employee> getPage(Page<Employee> page){
+		
+		return employeeDao.getPage(page);
+	}
+	
 	
 	//完成登录操作
 	@Transactional

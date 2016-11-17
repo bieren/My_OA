@@ -21,7 +21,7 @@
 
 		$('#tt').tree({
 			onClick : function(node) {
-				alert(node.text+node.id+node.); // 在用户点击的时候提示
+				alert(node.text+node.id); // 在用户点击的时候提示
 			
 				if(node.url){
 					window.parent.document.getElementById("content").src = node.url;

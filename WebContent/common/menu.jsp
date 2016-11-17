@@ -12,10 +12,10 @@
 		$("body").click(function(){
 			if(view_flag == 1){
 				window.parent.parent.document.getElementById("frame2").cols = "0,10,*";
-				$(".navPoint").text(4);
+				$(".navPoint").text("▶");
 			}else{
 				window.parent.parent.document.getElementById("frame2").cols = "200,10,*";
-				$(".navPoint").text(3);
+				$(".navPoint").text("◀");
 			}
 			
 			view_flag = 1 - view_flag;
@@ -25,5 +25,5 @@
 </script>
 <body>
 <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
-<SPAN class=navPoint style="font-size: 9pt;" id=switchPoint title=关闭/打开左栏>3</SPAN><BR>
+<SPAN class=navPoint style="font-size: 9pt;" id=switchPoint title=关闭/打开左栏>◀</SPAN><BR>
 </body>
